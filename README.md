@@ -1,7 +1,7 @@
 # Guest-Feedback-Insights
 
 ## Project Objective and Motivation 
-Guest FeSentosa Development Corporation (SDC) is in the business of travel and hospitality where providing  a good guest experience is critical to achieve good mindshare to entice returning visitors and  ensuring guests indirectly becoming our brand ambassadors through good reviews and feedback.  To achieve a good guest experience, it is critical to be able identify key issues and compliments from  guests through various channels.This will: 
+Sentosa Development Corporation (SDC) is in the business of travel and hospitality where providing  a good guest experience is critical to achieve good mindshare to entice returning visitors and  ensuring guests indirectly becoming our brand ambassadors through good reviews and feedback.  To achieve a good guest experience, it is critical to be able identify key issues and compliments from  guests through various channels.This will: 
 1. Enhance Operational Efficiency by extracting customer pain areas and grievances in textual data for timely action by relevant stakeholder. 
 2. Auto‐Classification of feedback into key categories for analysis, trending and monitoring.
 
@@ -24,4 +24,4 @@ customer satisfaction as part of Sentosa guest insights & experience (GIE) initi
 ## Project Deliverable 
 1. Model Construct and source codes where applicable with documentation for Text Summarization Module 
 2. Model Construct and source codes where applicable with documentation for Category Classification 
-3. Dashboard design and construct and source codes where applicable 
+3. Dashboard design and construct and source codes where applicable
