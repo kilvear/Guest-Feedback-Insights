@@ -404,6 +404,7 @@
 "ongkir": "ongkos kirim",
 "oot": "out of topic",
 "org2": "orang-orang",
+"org": "orang",
 "ortu": "orang tua",
 "otda": "otonomi daerah",
 "otw": "on the way, sedang di jalan",
@@ -458,6 +459,7 @@
 "salting": "salah tingkah",
 "sampe": "sampai",
 "samsek": "sama sekali",
+"ckup": "cukup",
 "sapose": "siapa",
 "satpam": "satuan pengamanan",
 "sbb": "sebagai berikut",
@@ -1017,5 +1019,8 @@
 "istaa": "nista",
 "dtang": "datang",
 "benarjujur": "jujur",
+"thn": "tahun",
+"tdak": "tidak",
+"spore": "singapura",
 "mgkin": "mungkin"
 }
