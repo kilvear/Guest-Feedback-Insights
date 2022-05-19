@@ -1,10 +1,12 @@
-## Steps
+## Preprocessing Review
 
-1. Normalize year (normalize_year.ipynb)
-2. Normalize ratings to 10 (normalize_rating.ipynb)
-3. Remove duplicate rows (remove_duplicates.ipynb)
+(preprocess_review.ipynb)
 
-- TO BE CONFIRMED -
+1. Remove duplicated rows
+2. Normalize year
+3. Normalize ratings to 10
+
+TBC
 
 4. Summarize to max 514 length
 5. Remove punctuation and emojis
