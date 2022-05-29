@@ -236,6 +236,7 @@ mulanya
 mungkinkah
 naik
 nanti
+nya
 nyaris
 oleh
 pada
@@ -673,3 +674,4 @@ nggak
 oh
 tolong
 bagaimanapun
+ga
