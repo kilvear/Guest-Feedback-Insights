@@ -1,0 +1,13 @@
+streamlit
+transformers
+matplotlib
+bert-extractive-summarizer
+spacy
+ipywidgets
+tqdm
+plotly
+openpyxl
+sentencepiece
+torch 
+torchvision 
+torchaudio --extra-index-url https://download.pytorch.org/whel/cu113
