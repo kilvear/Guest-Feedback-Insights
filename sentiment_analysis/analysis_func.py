@@ -108,6 +108,11 @@ def show_sentvsrating(dataframe, attraction):
                        title=f"{attraction}: Ratings vs Sentiment")
     fig.show()
     
+def show_attraction_dist(dataframe, attraction):
+    fig = px.histogram(dataframe['attraction'], x='attraction', 
+                        title=f"{attraction}: Attraction Distribution")
+    fig.show()
+    
 def show_source_dist(dataframe, attraction):
     fig = px.histogram(dataframe['source'], x='source', 
                         title=f"{attraction}: Source Distribution")
@@ -123,9 +128,24 @@ def show_revlen_dist(dataframe, attraction):
                         title=f"{attraction}: Review Text Length Distribution")
     fig.show()
     
+def revlen_rating_box(dataframe, attraction):
+    fig = px.box(dataframe, x="rating", y="review_len",
+                 title=f"{attraction}: Review length vs Ratings Boxplot")
+    fig.show()
+    
+def revlen_sentiment_box(dataframe, attraction):
+    fig = px.box(dataframe, x="sentiment", y="review_len",
+                 title=f"{attraction}: Review length vs Sentiment Boxplot")
+    fig.show()
+    
 def show_wordcount_dist(dataframe, attraction):
     fig = px.histogram(dataframe['word_count'], x='word_count', 
                         title=f"{attraction}: Word Count Distribution")
+    fig.show()
+    
+def wordcount_revlen(dataframe, attraction):
+    fig = px.scatter(dataframe, x='review_len', y='word_count',
+                     title=f"{attraction}: Word Count vs Review Length Scatterplot")
     fig.show()
 
     
@@ -133,10 +153,14 @@ def show_wordcount_dist(dataframe, attraction):
 
 # Overall
 def show_eda(dataframe, attraction):
+    show_attraction_dist(dataframe, attraction)
     show_source_dist(dataframe, attraction)
     show_sentiment_share(dataframe, attraction)
     show_revlen_dist(dataframe, attraction)
     show_wordcount_dist(dataframe, attraction)
+    wordcount_revlen(dataframe, attraction)
+    revlen_rating_box(dataframe, attraction)
+    revlen_sentiment_box(dataframe, attraction)
     
 # Specific Attraction
 def show_visual(dataframe, attraction):

@@ -58,7 +58,7 @@ def preprocess_sentiment(df):
     
     text_list = tokenize_id(text.replace("  ", ""))
     for index, token in enumerate(text_list):
-        for key, value in all_emoji_emoticons.items():
+        for key, _ in all_emoji_emoticons.items():
             if key in token:
                 text_list[index]=token.replace(key, ts.google(all_emoji_emoticons[key], from_language='en', to_language='id'))
                 
