@@ -147,6 +147,22 @@ def wordcount_revlen(dataframe, attraction):
     fig = px.scatter(dataframe, x='review_len', y='word_count',
                      title=f"{attraction}: Word Count vs Review Length Scatterplot")
     fig.show()
+    
+def date_sentiment(dataframe, attraction):
+    df_t = dataframe.groupby(['date', 'sentiment']).size().reset_index()
+    df_t['percentage'] = dataframe.groupby(['date', 'sentiment']).size().groupby(level=0).apply(lambda x: 100 * x / float(x.sum())).values
+    df_t.columns = ['date', 'sentiment', 'Counts', 'Percentage']
+
+    fig = px.bar(df_t, 
+                 x='date', y=['Counts'], color='sentiment', 
+                 color_discrete_map={
+                    'positive': 'green',
+                    'neutral': 'orange',
+                    'negative': 'red'
+                                    },
+                 text=df_t['Percentage'].apply(lambda x: '{0:1.2f}%'.format(x)), 
+                 title=f"{attraction}: Sentiment Percentage Over Time")
+    fig.show()
 
     
 ### Combined Figures
@@ -159,8 +175,10 @@ def show_eda(dataframe, attraction):
     show_revlen_dist(dataframe, attraction)
     show_wordcount_dist(dataframe, attraction)
     wordcount_revlen(dataframe, attraction)
+    show_rating_dist(dataframe, attraction)
     revlen_rating_box(dataframe, attraction)
     revlen_sentiment_box(dataframe, attraction)
+    date_sentiment(dataframe, attraction)
     
 # Specific Attraction
 def show_visual(dataframe, attraction):
@@ -170,6 +188,7 @@ def show_visual(dataframe, attraction):
     show_sentiment_share(dataframe, attraction)
     show_sentvsrating(dataframe, attraction)
     show_rating_dist(dataframe, attraction)
+    date_sentiment(dataframe, attraction)
     
     # Overall wordcloud
     print(f'\n{attraction} Word Cloud')

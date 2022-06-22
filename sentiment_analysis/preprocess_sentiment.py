@@ -46,7 +46,7 @@ def preprocess_sentiment(df):
   slangwords = ast.literal_eval(contents)
   
   def tokenize_id(text):
-    text_list = [token.text for i, token in enumerate(id_nlp(text))]
+    text_list = [token.text for _, token in enumerate(id_nlp(text))]
     return text_list
   
   def translate_emoji(text):
@@ -76,7 +76,7 @@ def preprocess_sentiment(df):
   df['new_reviews'] = df['new_reviews'].apply(lambda x: " ".join(slangwords.get(word, word) for word in tokenize_id(x)))
   
   # Summarize reviews
-  # Reviews more than 1536 characters (Average indonesian word has 3 characters times 512 which is max sentiment tensor input)
+  # Reviews more than 1536 characters (Minimum indonesian word has 3 characters times 512 which is max sentiment tensor input)
   mask = (df['new_reviews'].str.len() >= 1536)
   df.loc[mask, 'new_reviews'] = df.loc[mask, 'new_reviews'].apply(lambda x: summary_model(x)[0]['summary_text']).str.replace('[^\w\s]','',regex=True)
   
